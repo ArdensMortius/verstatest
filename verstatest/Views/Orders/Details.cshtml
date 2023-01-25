@@ -1,0 +1,92 @@
+﻿@model verstatest.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            ID
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Order_ID)
+        </dd>
+        <dt class="col-sm-2">
+            Customer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer)
+        </dd>
+        <dt class = "col-sm-2">
+            Weight
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CargoWeight)
+        </dd>
+        <dt class = "col-sm-2">
+            Pickup Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PickupDate)
+        </dd>
+
+        <div>
+            <br />
+            <h5>Sender's Adress</h5>
+        </div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SendersAddress!.Region)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SendersAddress!.Region)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SendersAddress!.City)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SendersAddress!.City)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SendersAddress!.Details)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SendersAddress!.Details)
+        </dd>        
+
+        <div>
+            <br />
+            <h5>Delivery Adress</h5>
+        </div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DeliveryAddress!.Region)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DeliveryAddress!.Region)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeliveryAddress!.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeliveryAddress!.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeliveryAddress!.Details)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeliveryAddress!.Details)
+        </dd>
+
+
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model?.Order_ID">Edit</a> |*@
+    <a asp-action="Index">Back to List</a>
+</div>

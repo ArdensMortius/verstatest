@@ -1,0 +1,82 @@
+﻿@model verstatest.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Customer" class="control-label"></label>
+                <input asp-for="Customer" class="form-control" />
+                <span asp-validation-for="CargoWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoWeight" class="control-label"></label>
+                <input asp-for="CargoWeight" class="form-control" />
+                <span asp-validation-for="CargoWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickupDate" class="control-label"></label>
+                <input asp-for="PickupDate" class="form-control" />
+                <span asp-validation-for="PickupDate" class="text-danger"></span>
+            </div>
+            <div>
+                <br />
+                <h5>Sender's Address</h5>
+            </div>
+            <div class="form-group">
+                <label asp-for="SendersAddress.Region" class="control-label"></label>
+                <input asp-for="SendersAddress.Region" class="form-control" />
+                <span asp-validation-for="SendersAddress.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SendersAddress.City" class="control-label"></label>
+                <input asp-for="SendersAddress.City" class="form-control" />
+                <span asp-validation-for="SendersAddress.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SendersAddress.Details" class="control-label"></label>
+                <input asp-for="SendersAddress.Details" class="form-control" />
+                <span asp-validation-for="SendersAddress.Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <h5>Delivery Address</h5>
+            </div>
+            <div class="form-group">                
+                <label asp-for="DeliveryAddress.Region" class="control-label"></label>
+                <input asp-for="DeliveryAddress.Region" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryAddress.City" class="control-label"></label>
+                <input asp-for="DeliveryAddress.City" class="form-control"/>
+                <span asp-validation-for="DeliveryAddress.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryAddress.Details" class="control-label"></label>
+                <input asp-for="DeliveryAddress.Details" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
